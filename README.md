@@ -35,7 +35,7 @@ Use Control-X to save.
 
 Tell systemd to reload:
 
-	systemctl daemon=reload
+	systemctl daemon-reload
 
 Restart the service
 	
