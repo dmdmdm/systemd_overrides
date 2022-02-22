@@ -15,7 +15,7 @@ I hope these are useful for some other people.
 ## Services that run programs
 
 Some services, like atd and crond let users/programs run arbitrary commands.
-So locked down those services to what the service itself needs plus what the commands
+I locked down those services to what the service itself needs plus what the commands
 I run need.  So you might need to change those.
 
 The CGI, PHP, etc scripts that your installation of Apache runs
@@ -24,7 +24,7 @@ need to be allowed too.
 ## How to use
 
 This are *override* files -- in general an override.conf file can override (replace)
-any unit option but here we have only added sandbox/security options.
+any unit option but here I have only added sandbox/security options.
 Do NOT modify the <service>.unit file that came with the package.
 Instead do:
 	
