@@ -25,7 +25,7 @@ need to be allowed too.
 
 This are *override* files -- in general an override.conf file can override (replace)
 any unit option but here we have only added sandbox/security options.
-Do NOT modified the <service>.unit file that came with the package.
+Do NOT modify the <service>.unit file that came with the package.
 Instead do:
 	
 	systemctl edit <service>
