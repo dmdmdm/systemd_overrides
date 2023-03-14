@@ -18,7 +18,7 @@ Services that run programs
 
 Some services, like atd and crond let users/programs run arbitrary commands.
 I locked down those services to what the service itself needs plus what the commands
-I run need.  So you might need to change those.
+I run to need.  So you might need to change those.
 
 The CGI, PHP, etc scripts that your installation of Apache runs
 need to be allowed too.
