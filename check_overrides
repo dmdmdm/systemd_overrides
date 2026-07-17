@@ -1,0 +1,57 @@
+#!/usr/bin/perl
+use strict;
+
+sub loadOverrideServices() {
+	my(@servs);
+	local(*FILE);
+	open(FILE, 'ls */*.conf |');
+	while (my $line = <FILE>) {
+		chop($line);
+		$line =~ s?.d/override.conf??;
+		push(@servs, $line);
+	}
+	close(FILE);
+	return @servs;
+
+}
+
+sub isOverride($$) {
+	my($servs_ref, $line) = @_;
+	foreach my $serv (@$servs_ref) {
+		if ($line =~ m/^$serv/) { return 1; }
+	}
+	return 0;
+}
+
+sub dumpServices($) {
+	my($servs_ref) = @_;
+	foreach my $serv (@$servs_ref) {
+		print "serv=$serv\n";
+	}
+}
+
+sub printOverrideServices($) {
+	my($servs_ref) = @_;
+	local(*FILE);
+	my $n = 0;
+	open(FILE, 'systemd-analyze security |');
+	while (my $line = <FILE>) {
+		$n++;
+		chop($line);
+		if ($n == 1) { 
+			print "$line\n";
+			next;
+		}
+		if (!isOverride($servs_ref, $line)) { next; }
+		print "$line\n";
+	}
+	close(FILE);
+}
+
+sub main() {
+	chdir('/etc/systemd/system');
+	my(@servs) = loadOverrideServices();
+	printOverrideServices(\@servs);
+}
+
+main();
