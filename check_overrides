@@ -1,4 +1,6 @@
 #!/usr/bin/perl
+# This script will report the systemd security rating for each service that has an override.conf file.
+# Just run it, there are no options.
 use strict;
 
 sub loadOverrideServices() {
