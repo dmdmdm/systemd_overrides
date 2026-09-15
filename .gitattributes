@@ -1,1 +1,1 @@
-system/ linguist-language=systemd
+*.conf linguist-language=systemd
