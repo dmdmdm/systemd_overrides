@@ -1,1 +1,2 @@
 *.conf linguist-language=systemd
+check_overrides linguist-generated
