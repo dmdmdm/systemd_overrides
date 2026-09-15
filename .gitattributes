@@ -1,2 +1,2 @@
-*.conf linguist-language=Conf
+*.conf linguist-language=INI
 check_overrides linguist-generated
