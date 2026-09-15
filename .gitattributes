@@ -1,2 +1,6 @@
+
+# I would rather says the language is Systemd but that's not understood
 *.conf linguist-language=INI
+
+# Its not really linguist-generated but I just want it ignored in the report about languages used
 check_overrides linguist-generated
